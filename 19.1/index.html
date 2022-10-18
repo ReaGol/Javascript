@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <ul>
+      <li>title 1</li>
+      <li class="start-here">title 2</li>
+      <li>
+        <ul>
+          <li>sub title 1</li>
+          <li>sub title 2</li>
+          <li>sub title 3</li>
+        </ul>
+      </li>
+      <li>title 3</li>
+    </ul>
+    <div>
+      <p>Hello World!</p>
+    </div>
+  </body>
+  <script>
+    const firstLi = document.querySelector(".start-here");
+    // 1.)
+    firstLi.textContent = "main title";
+    // 2)
+    const ul = firstLi.nextElementSibling.firstElementChild;
+    const newLi = document.createElement("li");
+    newLi.textContent = "sub title 4";
+    ul.appendChild(newLi);
+    // 3)
+    const firstUl = firstLi.parentElement;
+    firstUl.lastElementChild.remove();
+    // 4)
+    firstLi.parentElement.parentElement.parentElement.firstChild.childNodes[5].textContent="Master of the DOM"
+    // 5)
+    firstLi.parentElement.nextElementSibling.firstElementChild.lastChild.textContent="Goodbye World"
+  </script>
+</html>
+
+// 4. Change the <title> element text to “Master Of The Dom”.
+// 5. Change the text of the <p> element ot something else of
+// your
+// Note:
+// On the next page, you have the HTML code

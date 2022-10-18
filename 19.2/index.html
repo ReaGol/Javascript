@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const users = [
+      {
+        id: 167464,
+        firstName: "Jimmy",
+        lastName: "Arnold",
+        email: "jimmya@gmail.com",
+      },
+      {
+        id: 578447,
+        firstName: "Martha",
+        lastName: "Goldman",
+        email: "gold@hotmail.com",
+      },
+      {
+        id: 864578,
+        firstName: "Tim",
+        lastName: "Burton",
+        email: "timmy.hotmail.com",
+      },
+    ];
+    // 1)
+    const ol = document.createElement("ol");
+    users.forEach((user) => {
+      ol.appendChild(
+        document.createElement("li")
+      ).innerHTML = `${user.firstName} ${user.lastName}`;
+    });
+    document.querySelector("body").appendChild(ol);
+    // 2)
+    ol.style.listStyle = "none";
+    // 3)
+    const attribute1 = document.createAttribute("data-id");
+    attribute1.value=users[0].id
+    ol.firstElementChild.setAttributeNode(attribute1);
+
+    const attribute2 = document.createAttribute("data-id");
+    attribute2.value=users[1].id
+    ol.firstElementChild.nextElementSibling.setAttributeNode(attribute2);
+
+    const attribute3 = document.createAttribute("data-id");
+    attribute3.value=users[2].id
+    ol.lastElementChild.setAttributeNode(attribute3);
+
+  </script>
+</html>

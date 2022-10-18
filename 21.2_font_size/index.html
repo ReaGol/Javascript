@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: blueviolet;
+            font-size: 16px;
+        }
+        button {
+            font-size: 20px;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1"></button>
+    <button class="btn2"></button>
+    <h1>This text changes size when you click the buttons</h1>
+<script>
+    const button1 = document.querySelector('button');
+    button1.innerHTML="+";
+    const button2 = document.querySelector('button').nextElementSibling;
+    button2.innerHTML="-";
+    const h1 = document.querySelector('h1')
+    let size = 16;
+    h1.style.fontSize=`${size}px`;
+    
+    button2.addEventListener('click',()=>{
+        if (size > 6) {
+            size -= 2;
+            h1.style.fontSize=`${size}px`;
+        }
+    })
+
+    button1.addEventListener('click',()=>{
+        if (size < 100) {
+            size += 2;
+            h1.style.fontSize=`${size}px`;
+        }
+    })
+</script>
+</body>
+</html>
