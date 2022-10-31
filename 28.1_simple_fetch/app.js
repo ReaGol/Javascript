@@ -1,23 +1,21 @@
 const button = document.querySelector("button");
 const body = document.querySelector("body");
-button.addEventListener("click", (data) => {
-    console.log("clicked")
+button.addEventListener("click", fetchJoke)
+let jokeTitle = document.querySelector("h1");
+let joke = document.querySelector("p");
 
-});
-let jokeTitle = document.querySelector('h1')
-let joke = document.querySelector('p');
-
-fetch("https://api.jokes.one/jod")
+function fetchJoke() {
+  fetch("https://api.jokes.one/jod")
     .then((data) => {
-        console.log("resolved");
-        return data.json();
+      console.log("resolved");
+      return data.json();
     })
     .then((data) => {
-        console.log(data);
-        joke.textContent = content.jokes[0].joke.text;
-        jokeTitle.textContent = content.jokes[0].joke.title;
+      console.log(data);
+      jokeTitle.textContent = data.contents.jokes[0].joke.title;
+      joke.textContent = data.contents.jokes[0].joke.text;
     })
     .catch((e) => {
-        console.log("error!");
+      console.log("error!");
     });
-
+}
