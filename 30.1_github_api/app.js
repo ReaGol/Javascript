@@ -2,7 +2,7 @@ const githubURL = `https://api.github.com/users/`;
 const userName = document.querySelector("input");
 const searchBTN = document.querySelector("button");
 const errorMessage = document.querySelector(".errorMessage");
-const container = document.querySelector("form");
+const container = document.querySelector(".container");
 const users = {};
 
 function createUserCard({ photo, repos, name }) {
@@ -56,5 +56,6 @@ const addEvents = () => {
   // userName.addEventListener("keyup", (e) => {
   //     if((e.key = 'Enter'))
   // });
+  console.log(userName);
 };
 addEvents();

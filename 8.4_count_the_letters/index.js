@@ -18,5 +18,6 @@ const letterCountingAndStoringFunction = (array) => {
     }
   });
   return letterCountNewObj;
-  letterCountingAndStoringFunction(wordsArray);
+
 };
+  letterCountingAndStoringFunction(wordsArray);
